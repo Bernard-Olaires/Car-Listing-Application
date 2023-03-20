@@ -1,0 +1,85 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.nav h4 {
+    margin-right: 100px;
+}
+
+.head-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.flex-container {
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #233142;
+    color: white;
+}
+
+.box {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 7px;
+}
+
+.one {
+    flex: 1 1 auto;
+}
+
+.two {
+    flex: 2 1 auto;
+}
+
+.under {
+    margin-right: 210px;
+}
+
+.instructions {
+    margin-left: 130px;
+}
+
+.date-time {
+    margin-right: 90px;
+}
+
+.dash {
+    margin-left: 290px;
+}
+
+.container {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex a{
+    margin-right: 20px;
+}
+/* .text {
+    margin-left: 10px;
+} */
+
+.head-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dash {
+    margin-left: 570px;
+}

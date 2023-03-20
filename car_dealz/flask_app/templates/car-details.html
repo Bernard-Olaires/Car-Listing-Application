@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/car-details.css') }}">
+    <title>Car Details</title>
+</head>
+<body>
+    <div class="head-nav">
+        <a class="dash" href="/dashboard">dashboard</a>
+        <a href="/logout">logout</a>
+    </div>
+    <div class="container">
+        <div class="text">
+            <h2>${{ car.price }}</h2>
+            <p>Model: {{car.model }}</p>
+            <p>Make: {{ car.make }}</p>
+            <p>Year: {{ car.year }}</p>
+            <p>Descripton:</p>
+            <p>{{ car.description }}</p>
+            <div class="flex">
+                <p>Seller: {{ car.seller }}</p>
+                <a href="/delete/car/{{ car.id }}">PURCHASE</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

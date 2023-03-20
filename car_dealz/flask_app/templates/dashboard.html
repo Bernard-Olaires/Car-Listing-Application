@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <title>Car Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1 class="text-center">Welcome to car Dealz, {{logged_in_user.first_name}}</h1>
+    </header>
+    <div class="nav">
+        <p>Cars for sale:</p>
+        <a href="/logout" class="btn btn-info">Logout</a>
+    </div>
+    <div class="flexbox-container">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Year</th>
+                    <th>Seller</th>
+                    <th class="act">Actions</th>
+                </tr>
+            </thead>
+            {% for car in cars  %}
+                <tr>
+                    <td>{{ car['model'] }}</td>
+                    <td>{{ car['year'] }}</td>
+                    <td>{{ car.creator.first_name }}</td>
+                    <td class="act">
+                        <a href="/view/car/{{ car['id'] }}">view car</a>
+                        <span>|</span>
+                        {% if car.creator.id == logged_in_user.id %}
+                        <a href="/edit/car/{{ car['id'] }}">edit</a>
+                        <span>|</span>
+                        <a href="/delete/car/{{ car['id'] }}">delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="create_div">
+        <a class="create" href="/add/car">+Create</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.head-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type=submit]{
+    width: 6%;
+}
+
+.dash {
+    margin-left: 300px;
+}

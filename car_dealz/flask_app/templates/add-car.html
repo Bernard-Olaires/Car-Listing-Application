@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add-car.css') }}">
+    <title>Add car</title>
+</head>
+<body>
+    <div class="head-nav">
+        <h1>Put a car up for Sale</h1>
+        <a class="dash" href="/dashboard">dashboard</a>
+        <a href="/logout">logout</a>
+    </div>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        <!-- declare a variable called messages -->
+        {% if messages %}
+        <!-- check if there are any messages -->
+        {% for message in messages %}
+        <!-- loop through the messages -->
+        <p style="background:rgb(195, 95, 95); text-align: center">{{message}}</p> <!-- display each message in a paragraph tag -->
+        {% endfor %}
+        {% endif %}
+
+        {% endwith %}
+        <form action="/create/car" method="post">
+
+            <input type="hidden" name="user_id" value="{{session.user_id}}">
+
+            <label for="price">Price:</label>
+            <input type="text" name="price">
+
+            <label for="model">Model:</label>
+            <input type="text" name="model">
+
+            <label for="make">Make:</label>
+            <input type="text" name="make">
+
+            <label for="year">Year:</label>
+            <input type="text" name="year">
+
+            <label for="description">Description:</label>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+
+            <div class="submit">
+                <input type="submit" value="Add">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
